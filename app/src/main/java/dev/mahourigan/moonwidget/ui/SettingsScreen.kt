@@ -895,6 +895,13 @@ fun SettingsScreen(
             }
 
             item {
+                // Below every setting, above the reset: checking for a new
+                // build is housekeeping, not configuration.
+                UpdateRow()
+                Spacer(Modifier.height(8.dp))
+            }
+
+            item {
                 TextButton(onClick = onReset) {
                     Text(stringResource(R.string.settings_reset), color = MoonColors.muted)
                 }

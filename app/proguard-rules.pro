@@ -47,3 +47,9 @@
 # Keep line numbers so a crash report from a release build can be read.
 -keepattributes SourceFile,LineNumberTable
 -renamesourcefileattribute SourceFile
+
+# The install-result receiver is named in the manifest, so it is kept — but the
+# same reflective-instantiation trap applies to anything constructed by name.
+# Keeping its constructor explicitly rather than trusting that the manifest
+# rule covers members, which is the mistake that broke the widget panel above.
+-keep class dev.mahourigan.moonwidget.update.InstallResultReceiver { <init>(); }
