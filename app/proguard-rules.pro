@@ -28,6 +28,22 @@
 -keep class dev.mahourigan.moonwidget.widget.MoonWidget { *; }
 -keep class dev.mahourigan.moonwidget.widget.MoonWidgetReceiver { *; }
 
+# Glance builds an ActionCallback by reflection -- it puts the class name in the
+# PendingIntent and calls getDeclaredConstructor().newInstance() when the tap
+# arrives. Glance ships "-keep public class * extends ActionCallback", but that
+# keeps only the class *name*: R8 is still free to drop members nothing calls,
+# and nothing in this app calls the constructor. It was duly removed, so tapping
+# the widget panel threw NoSuchMethodException inside Glance, which swallows it
+# -- the tap highlighted and then nothing happened.
+#
+# Debug builds are not minified, so this existed only in release, and only from
+# the first release build onward. Worth remembering as a class of bug: anything
+# constructed by name rather than by code needs its constructor kept, the same
+# way the workers above do.
+-keep class * implements androidx.glance.appwidget.action.ActionCallback {
+    <init>();
+}
+
 # Keep line numbers so a crash report from a release build can be read.
 -keepattributes SourceFile,LineNumberTable
 -renamesourcefileattribute SourceFile
