@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+      Coarse location only, and only requested when the user actively selects
+      "automatic location". Preset and custom locations need no permission.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <!-- Requested only when a notification toggle is switched on. -->
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!--
+      Requested only when "add moons to my calendar" is switched on. Read is
+      needed as well as write: the app finds its own entries again in order to
+      update or remove them.
+    -->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MoonWidget">
+
+        <!--
+          singleTop, because the widget starts this same activity. Under the
+          default standard mode a tap would stack a second copy on top of the
+          one already running, and backing out of it would reveal the first —
+          looking as though the app had reverted to an earlier session. With
+          singleTop the intent is handed to the instance that already exists.
+        -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".widget.MoonWidgetReceiver"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <!-- Both are exempt from the Android 8+ implicit-broadcast limits. -->
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.intent.action.TIME_SET" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/moon_widget_info" />
+        </receiver>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Shown for the moment between the widget being placed and Glance drawing it.
+
+  Deliberately unpainted: this layout cannot read the chosen theme, and a
+  hardcoded night-sky panel flashes dark over a light theme every time the
+  widget is placed or the device restarts. Blank for an instant is better than
+  briefly wrong.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/moon_preview_gibbous" />
+
+</LinearLayout>

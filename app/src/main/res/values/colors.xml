@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="night_sky">#FF0B1026</color>
+    <color name="moon_lit">#FFF2EFE4</color>
+    <color name="moon_shadow">#FF272B3D</color>
+    <color name="moon_muted">#FF9AA3C0</color>
+    <color name="ic_launcher_background">#FF0B1026</color>
+</resources>

@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Moon</string>
+    <string name="widget_description">Current moon phase, rise and set times</string>
+
+    <!-- Widget picker preview only; real values come from Glance at runtime. -->
+    <string name="preview_phase">Waxing Gibbous</string>
+    <string name="preview_illumination">73% lit</string>
+    <string name="preview_rise_set">↑ 4:42 pm   ↓ 4:15 am</string>
+    <string name="preview_full_moon">Full moon in 4 days</string>
+
+    <!-- Widget -->
+    <string name="widget_illumination_short">%1$d%% lit</string>
+    <string name="widget_rise_then_set">↑ %1$s   ↓ %2$s</string>
+    <string name="widget_set_then_rise">↓ %1$s   ↑ %2$s</string>
+    <string name="widget_unavailable">Moon unavailable</string>
+    <string name="widget_unavailable_hint">Tap to open</string>
+    <string name="widget_path_description">The Moon’s path across the sky tonight</string>
+    <string name="widget_moon_description">%1$s, %2$d%% illuminated</string>
+
+    <!-- Phase names -->
+    <string name="phase_new_moon">New Moon</string>
+    <string name="phase_waxing_crescent">Waxing Crescent</string>
+    <string name="phase_first_quarter">First Quarter</string>
+    <string name="phase_waxing_gibbous">Waxing Gibbous</string>
+    <string name="phase_full_moon">Full Moon</string>
+    <string name="phase_waning_gibbous">Waning Gibbous</string>
+    <string name="phase_last_quarter">Last Quarter</string>
+    <string name="phase_waning_crescent">Waning Crescent</string>
+
+    <!-- Detail screen -->
+    <string name="detail_illuminated">%1$d%% illuminated</string>
+    <string name="detail_sets">Sets</string>
+    <string name="detail_rises">Rises</string>
+    <string name="detail_rises_again">Rises again</string>
+    <string name="detail_then_sets">Then sets</string>
+    <string name="detail_currently_up">Currently above the horizon</string>
+    <string name="detail_currently_down">Currently below the horizon</string>
+    <string name="detail_next_full_moon">Next full moon</string>
+    <string name="detail_next_new_moon">Next new moon</string>
+    <string name="detail_age">Age</string>
+    <string name="detail_age_value">%1$s days</string>
+    <string name="detail_moon_sign">Moon sign</string>
+    <string name="detail_zodiac_caveat">Tropical zodiac — measured from the equinox, so this differs from the constellation the Moon is visually in front of.</string>
+    <string name="detail_change_location">Change location</string>
+    <string name="detail_location_default">%1$s (default)</string>
+    <string name="detail_unavailable">Could not work out the Moon\'s position.</string>
+    <string name="detail_retry">Try again</string>
+
+    <!-- Horizon edge cases -->
+    <string name="horizon_up_all_day">Up all day</string>
+    <string name="horizon_below">Below horizon</string>
+    <string name="horizon_none_soon">Not in the next few days</string>
+
+    <!-- Countdowns -->
+    <string name="countdown_today">Today</string>
+    <string name="countdown_tomorrow">Tomorrow</string>
+    <string name="full_moon_today">Full moon today</string>
+    <string name="full_moon_tomorrow">Full moon tomorrow</string>
+    <string name="full_moon_on">Full moon %1$s</string>
+    <string name="time_labelled_rise">rise %1$s</string>
+    <string name="time_labelled_peak">peak %1$s</string>
+
+    <!-- Time formatting -->
+    <string name="time_tomorrow">%1$s tomorrow</string>
+    <string name="time_on_day">%1$s %2$s</string>
+    <string name="time_placeholder">—</string>
+
+    <!-- Moon sign position, e.g. "17° Sagittarius" -->
+    <string name="moon_sign_position">%1$d° %2$s</string>
+
+    <!-- Spoken by TalkBack for the back arrow; the arrow itself is a bare glyph. -->
+    <string name="cd_back">Back</string>
+
+    <!-- Location screen -->
+    <string name="location_title">Location</string>
+    <string name="location_section_automatic">Automatic</string>
+    <string name="location_section_saved">Saved places</string>
+    <string name="location_section_add">Add a place</string>
+    <string name="location_section_cities">Cities</string>
+    <string name="location_use_my_location">Use my location</string>
+    <string name="location_auto_available">Follows the device\'s approximate position</string>
+    <string name="location_auto_needs_permission">Needs approximate location permission</string>
+    <string name="location_current">Current location</string>
+    <string name="location_last_known">Last known location</string>
+    <string name="location_remove">Remove</string>
+    <string name="location_enter_coordinates">Enter coordinates</string>
+    <string name="location_search">Search</string>
+    <string name="location_name">Name</string>
+    <string name="location_latitude">Latitude</string>
+    <string name="location_longitude">Longitude</string>
+    <string name="location_coordinate_hint">Positive latitude is north, positive longitude is east.</string>
+    <string name="location_cancel">Cancel</string>
+    <string name="location_save">Save</string>
+    <string name="location_coordinates">%1$.3f°%2$s, %3$.3f°%4$s</string>
+    <string name="location_north">N</string>
+    <string name="location_south">S</string>
+    <string name="location_east">E</string>
+    <string name="location_west">W</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_open">Settings</string>
+    <string name="settings_reset">Reset to defaults</string>
+    <string name="settings_change_location">Change location</string>
+    <string name="settings_change_location_sub">Where rise and set times are calculated for</string>
+    <string name="settings_section_widget">Widget</string>
+    <string name="settings_section_app">In the app</string>
+    <string name="settings_section_presentation">Presentation</string>
+    <string name="settings_section_notifications">Notifications</string>
+    <string name="setting_needs_notification_permission">Tap to allow notifications</string>
+
+    <string name="setting_widget_moon_image">The Moon</string>
+    <string name="setting_widget_moon_image_sub">The drawn moon itself</string>
+    <string name="setting_widget_phase_name">Phase name</string>
+    <string name="setting_widget_phase_name_sub">Show \"Waxing Gibbous\" and similar</string>
+    <string name="setting_widget_illumination">Illumination</string>
+    <string name="setting_widget_illumination_sub">Percentage of the disc that is lit</string>
+    <string name="setting_widget_rise_set">Rise and set times</string>
+    <string name="setting_widget_rise_set_sub">Next moonrise and moonset</string>
+    <string name="setting_widget_countdown">Full moon countdown</string>
+    <string name="setting_widget_countdown_sub">Days until the next full moon</string>
+    <string name="setting_widget_moon_sign">Moon sign</string>
+    <string name="setting_widget_moon_sign_sub">Zodiac sign on the widget</string>
+    <string name="setting_widget_compact_illumination">Illumination on small widget</string>
+    <string name="setting_widget_compact_illumination_sub">Adds a percentage under the small square widget</string>
+
+    <string name="setting_show_moon_image">The Moon</string>
+    <string name="setting_show_moon_image_sub">The large drawn moon at the top</string>
+    <string name="setting_show_sign_on_moon">Moon sign on the Moon</string>
+    <string name="setting_show_sign_on_moon_sub">Lay the zodiac symbol over the drawn moon</string>
+    <string name="setting_sign_blended">One colour</string>
+    <string name="setting_sign_blended_sub">Midway between the lit and dark sides, instead of switching across the terminator</string>
+    <string name="setting_show_phase_name">Phase name</string>
+    <string name="setting_show_phase_name_sub">Show \"Waxing Gibbous\" and similar</string>
+    <string name="setting_show_illumination">Illumination</string>
+    <string name="setting_show_illumination_sub">Percentage under the phase name</string>
+    <string name="setting_show_rise_set">Rise and set times</string>
+    <string name="setting_show_rise_set_sub">Next moonrise and moonset</string>
+    <string name="setting_show_horizon_status">Horizon status</string>
+    <string name="setting_show_horizon_status_sub">Whether the Moon is currently up</string>
+    <string name="setting_show_next_full_moon">Next full moon</string>
+    <string name="setting_show_next_full_moon_sub">Countdown to the next full moon</string>
+    <string name="setting_show_location_label">Location name</string>
+    <string name="setting_show_location_label_sub">The place the times are calculated for</string>
+    <string name="setting_show_change_location">Change location button</string>
+    <string name="setting_show_change_location_sub">The location picker is also in settings</string>
+    <string name="setting_show_phase_event_time">Show a time</string>
+    <string name="setting_show_phase_event_time_sub">Add a time of day to the moon phase rows</string>
+    <string name="settings_group_which_moons">WHICH MOONS</string>
+    <string name="settings_group_which_time">WHICH TIME</string>
+    <string name="setting_phase_time_full_moon">Full moon</string>
+    <string name="setting_phase_time_full_moon_sub">Show a time on the full moon row</string>
+    <string name="setting_phase_time_new_moon">New moon</string>
+    <string name="setting_phase_time_new_moon_sub">Show a time on the new moon row</string>
+    <string name="setting_phase_time_rise">Moonrise</string>
+    <string name="setting_phase_time_rise_sub">When it clears the horizon</string>
+    <string name="setting_phase_time_peak">Peak</string>
+    <string name="setting_phase_time_peak_sub">When it is highest in the sky</string>
+    <string name="setting_show_moon_sign">Moon sign section</string>
+    <string name="setting_show_moon_sign_sub">Zodiac sign and its description</string>
+    <string name="setting_show_distance">Distance</string>
+    <string name="setting_show_distance_sub">How far away the Moon is, and supermoons</string>
+    <string name="setting_show_age">Age</string>
+    <string name="setting_show_age_sub">Days since the last new moon</string>
+    <string name="setting_show_next_new_moon">Next new moon</string>
+    <string name="setting_show_next_new_moon_sub">Countdown alongside the full moon</string>
+
+    <string name="setting_swap_season_names">Swap season names</string>
+    <string name="setting_swap_season_names_sub">Names follow your hemisphere; turn on to use the other one</string>
+    <string name="setting_force_24h">Always use 24-hour time</string>
+    <string name="setting_force_24h_sub">Otherwise follows the system setting</string>
+    <string name="setting_highlight_supermoon">Highlight supermoons</string>
+    <string name="setting_highlight_supermoon_sub">Mark full moons that fall near perigee</string>
+
+    <string name="setting_notify_full_moon">Full moon</string>
+    <string name="setting_notify_full_moon_sub">Notify on the day of each full moon</string>
+    <string name="setting_notify_new_moon">New moon</string>
+    <string name="setting_notify_new_moon_sub">Notify on the day of each new moon</string>
+    <string name="setting_notify_moonrise">Moonrise</string>
+    <string name="setting_notify_moonrise_sub">Notify when the Moon rises where you are</string>
+
+    <!-- Distance -->
+    <string name="detail_distance">Distance</string>
+    <string name="detail_distance_value">%1$s km</string>
+    <string name="detail_apparent_size">Apparent size</string>
+    <string name="detail_apparent_size_value">%1$s\'</string>
+    <string name="detail_supermoon">Supermoon — a full moon near its closest approach.</string>
+    <string name="detail_micromoon">Micromoon — a full moon near its furthest point.</string>
+    <string name="detail_near_perigee">Near perigee (closest part of its orbit)</string>
+    <string name="detail_near_apogee">Near apogee (furthest part of its orbit)</string>
+    <string name="widget_supermoon_badge">Supermoon</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_name">Moon events</string>
+    <string name="notification_channel_description">Full moons, new moons and moonrise</string>
+    <string name="notification_full_moon_title">Full moon tonight</string>
+    <string name="notification_full_moon_text">The Moon is full — %1$d%% illuminated.</string>
+    <string name="notification_supermoon_title">Supermoon tonight</string>
+    <string name="notification_new_moon_title">New moon</string>
+    <string name="notification_full_moon_tomorrow">Full moon tomorrow</string>
+    <plurals name="notification_full_moon_ahead">
+        <item quantity="one">Full moon in %1$d day</item>
+        <item quantity="other">Full moon in %1$d days</item>
+    </plurals>
+    <plurals name="notification_supermoon_ahead">
+        <item quantity="one">Supermoon in %1$d day</item>
+        <item quantity="other">Supermoon in %1$d days</item>
+    </plurals>
+    <string name="notification_new_moon_tomorrow">New moon tomorrow</string>
+    <plurals name="notification_new_moon_ahead">
+        <item quantity="one">New moon in %1$d day</item>
+        <item quantity="other">New moon in %1$d days</item>
+    </plurals>
+    <string name="notification_new_moon_text">The Moon is new. Dark skies for stargazing.</string>
+    <string name="notification_moonrise_title">Moonrise</string>
+    <string name="notification_moonrise_text">The Moon is rising — %1$s.</string>
+
+    <!-- Notification timing -->
+    <string name="settings_group_when">WHEN TO NOTIFY</string>
+    <string name="setting_lead_on_day">On the day</string>
+    <string name="setting_lead_on_day_sub">A reminder on the day itself</string>
+    <string name="setting_lead_one_day">1 day before</string>
+    <string name="setting_lead_one_day_sub">The day before the event</string>
+    <string name="setting_lead_three_days">3 days before</string>
+    <string name="setting_lead_three_days_sub">A few days of warning</string>
+    <string name="setting_lead_seven_days">7 days before</string>
+    <string name="setting_lead_seven_days_sub">A week of warning</string>
+    <string name="setting_lead_custom">Custom</string>
+    <plurals name="lead_days_before">
+        <item quantity="one">%1$d day before</item>
+        <item quantity="other">%1$d days before</item>
+    </plurals>
+    <string name="setting_rise_at">At moonrise</string>
+    <string name="setting_rise_at_sub">The moment it clears the horizon</string>
+    <string name="setting_rise_15">15 minutes before</string>
+    <string name="setting_rise_15_sub">Time to get outside</string>
+    <string name="setting_rise_30">30 minutes before</string>
+    <string name="setting_rise_30_sub">A little more warning</string>
+    <string name="setting_rise_60">1 hour before</string>
+    <string name="setting_rise_60_sub">An hour of warning</string>
+    <string name="settings_notification_time">Notification time</string>
+    <string name="settings_custom_lead">Custom notice</string>
+    <string name="custom_lead_title">How many days ahead?</string>
+    <string name="notification_time_title">What time of day?</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_save">Save</string>
+
+    <!-- Special moons -->
+    <string name="settings_section_special_moons">Special moons</string>
+    <string name="setting_show_named_moons">Named moons</string>
+    <string name="setting_show_named_moons_sub">Traditional names like the Wolf Moon and Harvest Moon</string>
+    <string name="settings_group_which_names">WHICH NAMES</string>
+    <string name="detail_known_as">Known as</string>
+
+    <!-- almanac -->
+    <string name="moon_almanac_january">Wolf Moon</string>
+    <string name="moon_almanac_february">Snow Moon</string>
+    <string name="moon_almanac_march">Worm Moon</string>
+    <string name="moon_almanac_april">Pink Moon</string>
+    <string name="moon_almanac_may">Flower Moon</string>
+    <string name="moon_almanac_june">Strawberry Moon</string>
+    <string name="moon_almanac_july">Buck Moon</string>
+    <string name="moon_almanac_august">Sturgeon Moon</string>
+    <string name="moon_almanac_september">Corn Moon</string>
+    <string name="moon_almanac_october">Hunter’s Moon</string>
+    <string name="moon_almanac_november">Beaver Moon</string>
+    <string name="moon_almanac_december">Cold Moon</string>
+    <string name="moon_almanac_harvest">Harvest Moon</string>
+    <!-- old_english -->
+    <string name="moon_old_english_january">Æfterra Gēola</string>
+    <string name="moon_old_english_february">Solmōnaþ</string>
+    <string name="moon_old_english_march">Hrēðmōnaþ</string>
+    <string name="moon_old_english_april">Ēosturmōnaþ</string>
+    <string name="moon_old_english_may">Þrimilcemōnaþ</string>
+    <string name="moon_old_english_june">Ærra Līða</string>
+    <string name="moon_old_english_july">Æftera Līða</string>
+    <string name="moon_old_english_august">Wēodmōnaþ</string>
+    <string name="moon_old_english_september">Hāliġmōnaþ</string>
+    <string name="moon_old_english_october">Winterfylleþ</string>
+    <string name="moon_old_english_november">Blōtmōnaþ</string>
+    <string name="moon_old_english_december">Ærra Gēola</string>
+    <string name="moon_old_english_harvest">Hāliġmōnaþ</string>
+    <!-- celtic -->
+    <string name="moon_celtic_january">Quiet Moon</string>
+    <string name="moon_celtic_february">Moon of Ice</string>
+    <string name="moon_celtic_march">Moon of Winds</string>
+    <string name="moon_celtic_april">Growing Moon</string>
+    <string name="moon_celtic_may">Bright Moon</string>
+    <string name="moon_celtic_june">Mead Moon</string>
+    <string name="moon_celtic_july">Claiming Moon</string>
+    <string name="moon_celtic_august">Dispute Moon</string>
+    <string name="moon_celtic_september">Singing Moon</string>
+    <string name="moon_celtic_october">Harvest Moon</string>
+    <string name="moon_celtic_november">Dark Moon</string>
+    <string name="moon_celtic_december">Cold Moon</string>
+    <string name="moon_celtic_harvest">Harvest Moon</string>
+    <!-- alternative -->
+    <string name="moon_alternative_january">Storm Moon</string>
+    <string name="moon_alternative_february">Hunger Moon</string>
+    <string name="moon_alternative_march">Sap Moon</string>
+    <string name="moon_alternative_april">Egg Moon</string>
+    <string name="moon_alternative_may">Milk Moon</string>
+    <string name="moon_alternative_june">Rose Moon</string>
+    <string name="moon_alternative_july">Thunder Moon</string>
+    <string name="moon_alternative_august">Grain Moon</string>
+    <string name="moon_alternative_september">Barley Moon</string>
+    <string name="moon_alternative_october">Blood Moon</string>
+    <string name="moon_alternative_november">Frost Moon</string>
+    <string name="moon_alternative_december">Long Night Moon</string>
+    <string name="moon_alternative_harvest">Barley Moon</string>
+
+    <!-- Slot labels, shared by every name set -->
+    <string name="moon_slot_january">January</string>
+    <string name="moon_slot_february">February</string>
+    <string name="moon_slot_march">March</string>
+    <string name="moon_slot_april">April</string>
+    <string name="moon_slot_may">May</string>
+    <string name="moon_slot_june">June</string>
+    <string name="moon_slot_july">July</string>
+    <string name="moon_slot_august">August</string>
+    <string name="moon_slot_september">September</string>
+    <string name="moon_slot_october">October</string>
+    <string name="moon_slot_november">November</string>
+    <string name="moon_slot_december">December</string>
+    <string name="moon_slot_harvest">Nearest the September equinox</string>
+
+    <!-- One row of a name set listing, e.g. "January  Wolf Moon" -->
+    <string name="name_set_line">%1$s  ·  %2$s</string>
+    <string name="settings_name_set">Name set</string>
+    <string name="name_set_almanac">Farmers’ Almanac</string>
+    <string name="name_set_almanac_note">The familiar list. Often billed as Native American, though it is really a mix of Algonquin, colonial English and European folk names.</string>
+    <string name="name_set_old_english">Old English</string>
+    <string name="name_set_old_english_note">Anglo-Saxon month names recorded by Bede in 725 CE. The best documented of these sets.</string>
+    <string name="name_set_celtic">Celtic</string>
+    <string name="name_set_celtic_note">Widely circulated, but with no historical source and published versions disagree. Most likely a modern invention.</string>
+    <string name="name_set_alternative">Alternative English</string>
+    <string name="name_set_alternative_note">The “also known as” names listed beside the Almanac ones. A collection of alternates rather than one tradition.</string>
+
+    <!-- Zodiac signs -->
+    <string name="zodiac_aries">Aries</string>
+    <string name="zodiac_taurus">Taurus</string>
+    <string name="zodiac_gemini">Gemini</string>
+    <string name="zodiac_cancer">Cancer</string>
+    <string name="zodiac_leo">Leo</string>
+    <string name="zodiac_virgo">Virgo</string>
+    <string name="zodiac_libra">Libra</string>
+    <string name="zodiac_scorpio">Scorpio</string>
+    <string name="zodiac_sagittarius">Sagittarius</string>
+    <string name="zodiac_capricorn">Capricorn</string>
+    <string name="zodiac_aquarius">Aquarius</string>
+    <string name="zodiac_pisces">Pisces</string>
+
+    <string name="zodiac_aries_description">Impulsive and direct; a moon for starting things rather than finishing them.</string>
+    <string name="zodiac_taurus_description">Steady and sensory; associated with comfort, patience and holding ground.</string>
+    <string name="zodiac_gemini_description">Restless and talkative; linked to curiosity, news and scattered attention.</string>
+    <string name="zodiac_cancer_description">The Moon\'s home sign; inward, protective and strongly tidal in mood.</string>
+    <string name="zodiac_leo_description">Expressive and warm; drawn to performance, generosity and being seen.</string>
+    <string name="zodiac_virgo_description">Precise and practical; a moon for sorting, mending and paying attention to detail.</string>
+    <string name="zodiac_libra_description">Balancing and social; concerned with fairness, harmony and other people.</string>
+    <string name="zodiac_scorpio_description">Intense and private; associated with depth, secrecy and thorough endings.</string>
+    <string name="zodiac_sagittarius_description">Expansive and restless; pulls toward travel, meaning and the bigger picture.</string>
+    <string name="zodiac_capricorn_description">Disciplined and structural; a moon for long horizons and hard work.</string>
+    <string name="zodiac_aquarius_description">Detached and inventive; drawn to systems, groups and unorthodox angles.</string>
+    <string name="zodiac_pisces_description">Diffuse and imaginative; boundaries soften, intuition and rest come forward.</string>
+
+    <!-- Widget panel -->
+
+    <!-- Sun sign -->
+    <string name="detail_sun_sign">Sun sign</string>
+    <string name="detail_sun_sign_traditional">Traditional</string>
+    <string name="detail_sun_sign_astronomical">Astronomical</string>
+    <string name="detail_sun_sign_range">%1$s – %2$s</string>
+    <string name="detail_sun_sign_caveat">The traditional zodiac is fixed to the equinox; the sky has drifted about 24° since it was set down, so the constellation the Sun is really in usually differs. The thirteen-constellation version adds Ophiuchus, which the Babylonians left out to get a tidy twelve.</string>
+    <string name="setting_show_sun_sign">Sun sign</string>
+    <string name="setting_show_sun_sign_sub">The familiar star sign for the time of year</string>
+    <string name="setting_sun_sign_tropical">Traditional zodiac</string>
+    <string name="setting_sun_sign_tropical_sub">Twelve equal signs, measured from the equinox</string>
+    <string name="setting_sun_sign_astronomical">Astronomical zodiac</string>
+    <string name="setting_sun_sign_astronomical_sub">The thirteen real constellations, Ophiuchus included</string>
+
+    <string name="constellation_ophiuchus">Ophiuchus</string>
+    <string name="constellation_scorpius">Scorpius</string>
+    <string name="constellation_capricornus">Capricornus</string>
+
+    <string name="sun_aries_description">Spring\'s opening push; associated with initiative, appetite and going first.</string>
+    <string name="sun_taurus_description">Settled and sensory; a season for building slowly and enjoying what is already here.</string>
+    <string name="sun_gemini_description">Quick and curious; associated with talk, variety and holding two things at once.</string>
+    <string name="sun_cancer_description">Protective and homeward; concerned with family, memory and safe ground.</string>
+    <string name="sun_leo_description">Warm and expressive; associated with confidence, generosity and being seen.</string>
+    <string name="sun_virgo_description">Practical and exacting; a season for sorting, mending and useful work.</string>
+    <string name="sun_libra_description">Weighing and sociable; concerned with fairness, beauty and other people.</string>
+    <string name="sun_scorpio_description">Deep and private; associated with intensity, secrecy and thorough endings.</string>
+    <string name="sun_sagittarius_description">Far-ranging and frank; drawn to travel, meaning and the wider view.</string>
+    <string name="sun_capricorn_description">Patient and ambitious; associated with structure, duty and the long climb.</string>
+    <string name="sun_aquarius_description">Independent and inventive; drawn to systems, groups and unorthodox angles.</string>
+    <string name="sun_pisces_description">Soft-edged and imaginative; associated with intuition, art and letting go.</string>
+    <string name="sun_ophiuchus_description">The serpent-bearer, and the sign the traditional twelve leave out; linked to healing and renewal.</string>
+
+    <!-- Calendar -->
+    <string name="settings_section_calendar">Calendar</string>
+    <string name="setting_calendar_sync">Add moons to my calendar</string>
+    <string name="setting_calendar_sync_sub">Writes full and new moons into your calendar for the next two years. Switching this off removes every entry it added.</string>
+    <string name="setting_calendar_full_moons">Full moons</string>
+    <string name="setting_calendar_full_moons_sub">Named, where a name is switched on</string>
+    <string name="setting_calendar_new_moons">New moons</string>
+    <string name="setting_calendar_new_moons_sub">Darkest skies, best for stargazing</string>
+    <string name="setting_needs_calendar_permission">Needs permission to edit your calendar</string>
+
+    <string name="calendar_title_full_moon">Full Moon</string>
+    <string name="calendar_title_full_moon_named">Full Moon — %1$s</string>
+    <string name="calendar_title_new_moon">New Moon</string>
+    <string name="calendar_title_supermoon">%1$s (Supermoon)</string>
+    <string name="calendar_body_full_peak">Full moon at %1$s</string>
+    <string name="calendar_body_new_peak">New moon at %1$s</string>
+    <string name="calendar_body_supermoon">A supermoon — full while near its closest approach to Earth.</string>
+
+    <string name="setting_moon_texture">Moon texture</string>
+    <string name="setting_moon_texture_sub">Craters and maria across the lit face, tinted with the theme colour instead of a flat fill.</string>
+    <string name="setting_true_orientation">True rotation</string>
+    <string name="setting_true_orientation_sub">Starts at the angle the Moon rises at and turns smoothly to the angle it sets at. Off, it is drawn upright.</string>
+
+    <!-- Compass -->
+    <string name="detail_direction">Direction</string>
+    <string name="detail_direction_at_rise">Rises in the</string>
+    <string name="widget_direction">Facing %1$s</string>
+    <string name="widget_direction_at_rise">Rises %1$s</string>
+    <string name="compass_bearing">%1$s %2$d°</string>
+    <string name="setting_show_direction">Compass direction</string>
+    <string name="setting_show_direction_sub">Which way to face to see the Moon</string>
+    <string name="setting_widget_direction">Compass direction</string>
+    <string name="setting_widget_direction_sub">Which way to face, on the wide widget</string>
+    <string name="compass_n">N</string>
+    <string name="compass_nne">NNE</string>
+    <string name="compass_ne">NE</string>
+    <string name="compass_ene">ENE</string>
+    <string name="compass_e">E</string>
+    <string name="compass_ese">ESE</string>
+    <string name="compass_se">SE</string>
+    <string name="compass_sse">SSE</string>
+    <string name="compass_s">S</string>
+    <string name="compass_ssw">SSW</string>
+    <string name="compass_sw">SW</string>
+    <string name="compass_wsw">WSW</string>
+    <string name="compass_w">W</string>
+    <string name="compass_wnw">WNW</string>
+    <string name="compass_nw">NW</string>
+    <string name="compass_nnw">NNW</string>
+
+    <!-- Path across the sky -->
+    <string name="setting_show_sky_path">Path across the sky</string>
+    <string name="setting_show_sky_path_sub">How high the Moon climbs through the day, and how long it spends out of sight</string>
+    <string name="setting_widget_sign_on_moon">Moon sign on the Moon</string>
+    <string name="setting_widget_sign_on_moon_sub">Lay the zodiac symbol over the widget moon</string>
+    <string name="setting_widget_sky_path">Path across the sky</string>
+    <string name="setting_widget_sky_path_sub">A small arc showing how far through tonight\'s pass the Moon is</string>
+    <string name="path_rises">Rises</string>
+    <string name="path_sets">Sets</string>
+    <string name="path_up_down">Up for %1$s, hidden for %2$s</string>
+    <string name="path_peak">Climbs to %1$d° above the horizon</string>
+
+    <string name="rearrange_hint">Drag the handles to change the order.</string>
+    <string name="section_rise_set">Rise and set</string>
+    <string name="section_sky_path">Path across the sky</string>
+    <string name="section_timing">Full and new moon</string>
+    <string name="section_distance">Distance</string>
+    <string name="section_moon_sign">Moon sign</string>
+    <string name="section_sun_sign">Sun sign</string>
+    <string name="settings_rearrange">Rearrange sections</string>
+    <string name="settings_rearrange_sub">Change the order the cards appear in</string>
+    <string name="rearrange_title">Rearranging</string>
+    <string name="rearrange_done">Done</string>
+    <string name="cd_drag_handle">Drag to reorder</string>
+
+    <!-- Typeface and text size -->
+    <string name="settings_typography">Text</string>
+    <string name="typography_typeface">Typeface</string>
+    <string name="typography_size">Text size</string>
+    <string name="typography_sample">Waxing Gibbous · 80% lit</string>
+    <string name="typography_summary">%1$s · %2$s</string>
+    <string name="font_system">System</string>
+    <string name="font_serif">Serif</string>
+    <string name="font_monospace">Monospace</string>
+    <string name="font_condensed">Condensed</string>
+    <string name="text_size_small">Small</string>
+    <string name="text_size_default">Default</string>
+    <string name="text_size_large">Large</string>
+    <string name="text_size_extra_large">Extra large</string>
+
+    <!-- Theme picker -->
+    <string name="settings_theme">Theme</string>
+    <string name="theme_midnight">Midnight</string>
+    <string name="theme_midnight_note">Deep blue sky, bone-white Moon</string>
+    <string name="theme_eclipse">Eclipse</string>
+    <string name="theme_eclipse_note">True black, easy on an OLED screen</string>
+    <string name="theme_harvest">Harvest</string>
+    <string name="theme_harvest_note">A low orange Moon over warm earth</string>
+    <string name="theme_sea_glass">Sea Glass</string>
+    <string name="theme_sea_glass_note">Cool green, like moonlight on water</string>
+    <string name="theme_blood_moon">Blood Moon</string>
+    <string name="theme_blood_moon_note">The copper red of a total eclipse</string>
+    <string name="theme_parchment">Parchment</string>
+    <string name="theme_parchment_note">Light theme; the Moon drawn as ink on paper</string>
+    <string name="theme_amber_sky">Amber Sky</string>
+    <string name="theme_amber_sky_note">Built for red-green colour blindness</string>
+    <string name="theme_ember">Ember</string>
+    <string name="theme_ember_note">Built for blue-yellow colour blindness</string>
+    <string name="theme_custom">Custom</string>
+    <string name="theme_custom_note">Your own five colours, set below</string>
+    <string name="theme_custom_colours">Custom colours</string>
+    <string name="theme_reset_custom">Reset custom colours</string>
+    <string name="theme_warning_text">Text may be hard to read on this background</string>
+    <string name="theme_warning_moon">The Moon may be hard to make out on this background</string>
+    <string name="theme_warning_accent">Ticks and selected rows may be hard to see</string>
+
+    <!-- The five editable colour roles -->
+    <string name="role_background">Background</string>
+    <string name="role_background_note">The page, and the widget tile</string>
+    <string name="role_surface">Surface</string>
+    <string name="role_surface_note">Cards, and the Moon\'s dark side</string>
+    <string name="role_text">Text</string>
+    <string name="role_text_note">Headings and values</string>
+    <string name="role_moon">Moon</string>
+    <string name="role_moon_note">The lit face of the Moon</string>
+    <string name="role_accent">Accent</string>
+    <string name="role_accent_note">Ticks, selections, supermoon marker</string>
+
+    <!-- Colour picker -->
+    <string name="colour_hue">Hue</string>
+    <string name="colour_saturation">Saturation</string>
+    <string name="colour_brightness">Brightness</string>
+    <string name="colour_hex">Hex</string>
+</resources>

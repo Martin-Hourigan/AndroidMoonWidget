@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Waxing gibbous at 73% illumination, drawn with the same geometry the app uses
+  at runtime: a limb semicircle closed by a terminator semi-ellipse.
+
+  Terminator semi-axis = |cos(phase)| * radius = 0.46 * 48 = 22.08.
+  Lit on the left, matching the southern-hemisphere default (Newcastle).
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Unlit disc -->
+    <path
+        android:fillColor="#272B3D"
+        android:pathData="M54,6 A48,48 0 1,1 53.9,6 Z" />
+
+    <!-- Lit region: left limb, then the terminator back up the right side -->
+    <path
+        android:fillColor="#F2EFE4"
+        android:pathData="M54,6
+            A48,48 0 0,0 54,102
+            A22.08,48 0 0,1 54,6
+            Z" />
+
+    <!-- Faint rim -->
+    <path
+        android:strokeColor="#50F2EFE4"
+        android:strokeWidth="0.8"
+        android:fillColor="#00000000"
+        android:pathData="M54,6 A48,48 0 1,1 53.9,6 Z" />
+</vector>

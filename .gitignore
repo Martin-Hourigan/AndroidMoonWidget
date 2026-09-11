@@ -1,0 +1,24 @@
+# Signing material. The keystore is the only copy of the key that can update an
+# already-installed app, so back it up somewhere — but never commit it.
+keystore.properties
+*.jks
+*.keystore
+
+# Build output
+/build
+/app/build
+.gradle
+local.properties
+
+# IDE
+.idea
+*.iml
+captures
+
+# Build output. An APK is rebuilt from source any time, and git keeps
+# every copy forever — finished builds belong on a GitHub Release.
+*.apk
+*.aab
+
+# Crash dumps from MSYS tools; nothing to do with the app.
+*.stackdump

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Crescent moon, drawn as a filled circle with a bite taken out by an offset circle. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path
+        android:fillColor="#F2EFE4"
+        android:fillType="evenOdd"
+        android:pathData="M54,26
+            a28,28 0 1,0 0,56
+            a28,28 0 1,1 0,-56
+            z
+            M62,30
+            a24,24 0 1,0 0,48
+            a29,29 0 1,1 0,-48
+            z" />
+</vector>

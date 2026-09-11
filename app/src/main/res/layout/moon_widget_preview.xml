@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Static preview shown in the system widget picker. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/night_sky"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="12dp">
+
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/moon_preview_gibbous" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/preview_phase"
+            android:textColor="@color/moon_lit"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/preview_illumination"
+            android:textColor="@color/moon_muted"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@string/preview_rise_set"
+            android:textColor="@color/moon_muted"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/preview_full_moon"
+            android:textColor="@color/moon_muted"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
