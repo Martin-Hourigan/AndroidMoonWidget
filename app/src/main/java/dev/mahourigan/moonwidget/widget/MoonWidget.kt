@@ -386,9 +386,17 @@ class MoonWidget : GlanceAppWidget() {
         val panel = WidgetPanel.at(index, available) ?: return
         val context = androidx.glance.LocalContext.current
 
+        // The dome and the dial are drawings sized to their box, so they need
+        // the fixed width. The next-event line is a time, and at the size it
+        // is set now it is wider than 68dp -- given a fixed width it would
+        // simply clip. So that one takes the height and finds its own width.
+        val shape = when (panel) {
+            WidgetPanel.NEXT_EVENT -> GlanceModifier.height(heightDp.dp)
+            else -> GlanceModifier.size(width = widthDp.dp, height = heightDp.dp)
+        }
+
         Box(
-            modifier = GlanceModifier
-                .size(width = widthDp.dp, height = heightDp.dp)
+            modifier = shape
                 // Pointless — and a confusing no-op for the user — when there
                 // is only one view to look at.
                 .then(
@@ -403,9 +411,13 @@ class MoonWidget : GlanceAppWidget() {
             when (panel) {
                 WidgetPanel.SKY_PATH -> SkyDome(snapshot, palette, widthDp, heightDp)
                 WidgetPanel.COMPASS -> CompassDial(snapshot, palette, heightDp)
+                // Twice the old 12sp. It is the one panel that is a fact
+                // rather than a picture, and it was the smallest thing on the
+                // widget -- readable at arm's length is the whole point of
+                // putting the next crossing on a home screen.
                 WidgetPanel.NEXT_EVENT -> Text(
                     text = nextEventLine(snapshot, settings, context),
-                    style = widgetText(palette.text, 12, settings, FontWeight.Medium),
+                    style = widgetText(palette.text, 24, settings, FontWeight.Medium),
                 )
             }
         }
