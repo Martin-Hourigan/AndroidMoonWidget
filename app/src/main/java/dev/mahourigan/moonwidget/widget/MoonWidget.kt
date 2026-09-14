@@ -11,9 +11,11 @@ import dev.mahourigan.moonwidget.render.CompassRenderer
 import dev.mahourigan.moonwidget.render.MoonRenderer
 import dev.mahourigan.moonwidget.render.TimeFormatting
 import dev.mahourigan.moonwidget.ui.MainActivity
+import dev.mahourigan.moonwidget.render.MoonOrbitRenderer
 import dev.mahourigan.moonwidget.render.SkyDomeRenderer
 import dev.mahourigan.moonwidget.ui.Palette
 import dev.mahourigan.moonwidget.ui.toCompassPalette
+import dev.mahourigan.moonwidget.ui.toOrbitPalette
 import dev.mahourigan.moonwidget.ui.toDomePalette
 import dev.mahourigan.moonwidget.ui.toGlanceFontFamily
 import dev.mahourigan.moonwidget.ui.toPalette
@@ -89,7 +91,17 @@ class MoonWidget : GlanceAppWidget() {
             // it did. Collecting the store inside the composition means a change
             // reaches the widget whether or not anyone remembers to call
             // updateAll.
-            val data by remember { widgetData(context) }.collectAsState(initial = initial)
+            //
+            // The settings flow alone is still not enough, because it only
+            // emits when a setting is written, and the snapshot needs a clock.
+            // Keying the remember on the refresh stamp rebuilds the flow, and a
+            // fresh collection recomputes the snapshot from the current time.
+            // Without this the widget shows rise and set times from whenever
+            // the session began — including set times that have already passed,
+            // which a live computation can never produce.
+            val refreshedAt = currentState(REFRESHED_AT) ?: 0L
+            val data by remember(refreshedAt) { widgetData(context) }
+                .collectAsState(initial = initial)
             val palette = data.settings.palette.toPalette()
 
             GlanceTheme {
@@ -217,10 +229,11 @@ class MoonWidget : GlanceAppWidget() {
     private fun moonDiameter(tileHeightDp: Float, wide: Boolean, settings: Settings): Int {
         val available = tileHeightDp - TILE_PADDING_DP * 2
         // On the wide layout the dome sits beside the Moon, not under it.
-        val domeBlock = if (settings.widgetShowSkyPath && !wide) DOME_HEIGHT_DP + DOME_GAP_DP else 0f
+        val domeBlock =
+            if (settings.widgetPanelEnabled && !wide) DOME_HEIGHT_DP + DOME_GAP_DP else 0f
         val preferred = when {
             wide -> WIDE_MOON_DP
-            settings.widgetShowSkyPath -> COMPACT_WITH_DOME_MOON_DP
+            settings.widgetPanelEnabled -> COMPACT_WITH_DOME_MOON_DP
             else -> COMPACT_MOON_DP
         }
 
@@ -243,21 +256,42 @@ class MoonWidget : GlanceAppWidget() {
         val pixels = (diameter * density).toInt()
 
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            val symbol = if (settings.widgetShowSignOnMoon) snapshot.sign.sign.symbol else null
+            val rings = MoonOrbitRenderer.Rings(
+                passFraction = snapshot.pass
+                    ?.takeIf { settings.widgetSkyPathIsOrbit }
+                    ?.fractionAt(snapshot.calculatedAt),
+                moonIsUp = snapshot.isUp,
+                azimuthDegrees = WidgetPanel.bearingOf(snapshot)
+                    ?.takeIf { settings.widgetDirectionIsOrbit },
+            )
+
             Image(
                 provider = ImageProvider(
-                    MoonRenderer.render(
-                        context = context,
-                        sizePx = pixels,
-                        appearance = snapshot.appearance,
-                        palette = palette.toRenderPalette(),
-                        symbol = if (settings.widgetShowSignOnMoon) {
-                            snapshot.sign.sign.symbol
-                        } else {
-                            null
-                        },
-                        blendSymbol = settings.signOnMoonBlended,
-                        useTexture = settings.moonTextureEnabled,
-                    )
+                    if (rings.count > 0) {
+                        MoonOrbitRenderer.render(
+                            context = context,
+                            sizePx = pixels,
+                            density = density,
+                            appearance = snapshot.appearance,
+                            rings = rings,
+                            moonPalette = palette.toRenderPalette(),
+                            palette = palette.toOrbitPalette(),
+                            symbol = symbol,
+                            blendSymbol = settings.signOnMoonBlended,
+                            useTexture = settings.moonTextureEnabled,
+                        )
+                    } else {
+                        MoonRenderer.render(
+                            context = context,
+                            sizePx = pixels,
+                            appearance = snapshot.appearance,
+                            palette = palette.toRenderPalette(),
+                            symbol = symbol,
+                            blendSymbol = settings.signOnMoonBlended,
+                            useTexture = settings.moonTextureEnabled,
+                        )
+                    }
                 ),
                 contentDescription = context.getString(
                     R.string.widget_moon_description,

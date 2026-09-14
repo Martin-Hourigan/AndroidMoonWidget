@@ -168,6 +168,16 @@ private val SECTIONS = listOf(
                 R.string.setting_widget_direction_sub,
             ),
             ToggleRow(
+                SettingKey.WIDGET_SKY_PATH_ORBIT,
+                R.string.setting_widget_sky_path_orbit,
+                R.string.setting_widget_sky_path_orbit_sub,
+            ),
+            ToggleRow(
+                SettingKey.WIDGET_DIRECTION_ORBIT,
+                R.string.setting_widget_direction_orbit,
+                R.string.setting_widget_direction_orbit_sub,
+            ),
+            ToggleRow(
                 SettingKey.WIDGET_COMPACT_ILLUMINATION,
                 R.string.setting_widget_compact_illumination,
                 R.string.setting_widget_compact_illumination_sub,

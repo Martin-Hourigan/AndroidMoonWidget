@@ -30,6 +30,10 @@ data class Settings(
     val widgetCompactShowIllumination: Boolean = false,
     /** The compass bearing on the wide widget. */
     val widgetShowDirection: Boolean = false,
+    /** Draw the pass as a ring round the Moon instead of a dome below it. */
+    val widgetSkyPathAsOrbit: Boolean = false,
+    /** Draw the bearing as a ring round the Moon instead of a dial below it. */
+    val widgetDirectionAsOrbit: Boolean = false,
 
     // --- App contents ---
     /** The large drawn Moon at the top of the screen. */
@@ -271,13 +275,27 @@ data class Settings(
      * always did.
      */
     val widgetPanelEnabled: Boolean
-        get() = widgetShowSkyPath || widgetShowDirection
+        get() = (widgetShowSkyPath && !widgetSkyPathIsOrbit) ||
+            (widgetShowDirection && !widgetDirectionIsOrbit)
+
+    /**
+     * Whether each reading is drawn round the Moon rather than in the panel.
+     *
+     * Conditional on the Moon being shown at all: a ring needs something to
+     * orbit, so with the Moon switched off both fall back to the panel rather
+     * than disappearing, which is the only behaviour that loses nothing.
+     */
+    val widgetSkyPathIsOrbit: Boolean
+        get() = widgetShowMoonImage && widgetShowSkyPath && widgetSkyPathAsOrbit
+
+    val widgetDirectionIsOrbit: Boolean
+        get() = widgetShowMoonImage && widgetShowDirection && widgetDirectionAsOrbit
 
     /** Whether the wide widget's text column would have any content. */
     val widgetTextColumnHasContent: Boolean
         get() = widgetShowPhaseName || widgetShowIllumination ||
             widgetShowMoonSign || widgetShowRiseSet || widgetShowFullMoonCountdown ||
-            widgetShowSkyPath || widgetShowDirection
+            widgetShowDirection || widgetPanelEnabled
 }
 
 /**
@@ -300,6 +318,8 @@ enum class SettingKey {
     WIDGET_SKY_PATH,
     WIDGET_COMPACT_ILLUMINATION,
     WIDGET_DIRECTION,
+    WIDGET_SKY_PATH_ORBIT,
+    WIDGET_DIRECTION_ORBIT,
     SHOW_MOON_IMAGE,
     SHOW_SIGN_ON_MOON,
     SIGN_ON_MOON_BLENDED,
@@ -377,6 +397,8 @@ fun Settings.valueOf(key: SettingKey): Boolean = when (key) {
     SettingKey.WIDGET_SKY_PATH -> widgetShowSkyPath
     SettingKey.WIDGET_COMPACT_ILLUMINATION -> widgetCompactShowIllumination
     SettingKey.WIDGET_DIRECTION -> widgetShowDirection
+    SettingKey.WIDGET_SKY_PATH_ORBIT -> widgetSkyPathAsOrbit
+    SettingKey.WIDGET_DIRECTION_ORBIT -> widgetDirectionAsOrbit
     SettingKey.SHOW_MOON_IMAGE -> showMoonImage
     SettingKey.SHOW_SIGN_ON_MOON -> showSignOnMoon
     SettingKey.SIGN_ON_MOON_BLENDED -> signOnMoonBlended
@@ -454,6 +476,8 @@ fun Settings.with(key: SettingKey, value: Boolean): Settings = when (key) {
     SettingKey.WIDGET_SKY_PATH -> copy(widgetShowSkyPath = value)
     SettingKey.WIDGET_COMPACT_ILLUMINATION -> copy(widgetCompactShowIllumination = value)
     SettingKey.WIDGET_DIRECTION -> copy(widgetShowDirection = value)
+    SettingKey.WIDGET_SKY_PATH_ORBIT -> copy(widgetSkyPathAsOrbit = value)
+    SettingKey.WIDGET_DIRECTION_ORBIT -> copy(widgetDirectionAsOrbit = value)
     SettingKey.SHOW_MOON_IMAGE -> copy(showMoonImage = value)
     SettingKey.SHOW_SIGN_ON_MOON -> copy(showSignOnMoon = value)
     SettingKey.SIGN_ON_MOON_BLENDED -> copy(signOnMoonBlended = value)

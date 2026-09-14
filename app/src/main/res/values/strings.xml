@@ -452,6 +452,10 @@
     <string name="setting_show_sky_path_sub">How high the Moon climbs through the day, and how long it spends out of sight</string>
     <string name="setting_widget_sign_on_moon">Moon sign on the Moon</string>
     <string name="setting_widget_sign_on_moon_sub">Lay the zodiac symbol over the widget moon</string>
+    <string name="setting_widget_sky_path_orbit">Sky path round the Moon</string>
+    <string name="setting_widget_sky_path_orbit_sub">A ring instead of the dome below, showing the whole cycle rather than just the visible half</string>
+    <string name="setting_widget_direction_orbit">Direction round the Moon</string>
+    <string name="setting_widget_direction_orbit_sub">A ring instead of the dial below, with north at the top</string>
     <string name="setting_widget_sky_path">Path across the sky</string>
     <string name="setting_widget_sky_path_sub">A small arc showing how far through tonight\'s pass the Moon is</string>
     <string name="path_rises">Rises</string>

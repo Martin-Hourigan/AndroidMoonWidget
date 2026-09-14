@@ -33,11 +33,20 @@ enum class WidgetPanel {
          */
         fun available(snapshot: MoonSnapshot, settings: Settings): List<WidgetPanel> =
             buildList {
-                if (settings.widgetShowSkyPath && snapshot.pass != null) add(SKY_PATH)
+                // A reading drawn round the Moon has left the panel.
+                if (settings.widgetShowSkyPath && !settings.widgetSkyPathIsOrbit &&
+                    snapshot.pass != null
+                ) {
+                    add(SKY_PATH)
+                }
                 // Always offered once the panel exists at all: the time to the
                 // next crossing is the thing people check a moon widget for.
                 if (snapshot.next.rise != null || snapshot.next.set != null) add(NEXT_EVENT)
-                if (settings.widgetShowDirection && bearingOf(snapshot) != null) add(COMPASS)
+                if (settings.widgetShowDirection && !settings.widgetDirectionIsOrbit &&
+                    bearingOf(snapshot) != null
+                ) {
+                    add(COMPASS)
+                }
             }
 
         /**

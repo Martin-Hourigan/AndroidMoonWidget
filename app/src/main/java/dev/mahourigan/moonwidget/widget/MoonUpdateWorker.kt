@@ -1,7 +1,6 @@
 package dev.mahourigan.moonwidget.widget
 
 import android.content.Context
-import androidx.glance.appwidget.updateAll
 import androidx.work.CoroutineWorker
 import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.ExistingWorkPolicy
@@ -28,7 +27,7 @@ class MoonUpdateWorker(
 ) : CoroutineWorker(context, parameters) {
 
     override suspend fun doWork(): Result {
-        MoonWidget().updateAll(applicationContext)
+        refreshWidgets(applicationContext)
         return Result.success()
     }
 
@@ -76,7 +75,7 @@ class MidnightUpdateWorker(
 ) : CoroutineWorker(context, parameters) {
 
     override suspend fun doWork(): Result {
-        MoonWidget().updateAll(applicationContext)
+        refreshWidgets(applicationContext)
         // Re-arm for the next midnight before returning.
         schedule(applicationContext)
         return Result.success()

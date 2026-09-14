@@ -3,6 +3,7 @@ package dev.mahourigan.moonwidget.ui
 import dev.mahourigan.moonwidget.data.AppFont
 import dev.mahourigan.moonwidget.data.ThemeColors
 import dev.mahourigan.moonwidget.render.CompassRenderer
+import dev.mahourigan.moonwidget.render.MoonOrbitRenderer
 import dev.mahourigan.moonwidget.render.MoonRenderer
 import dev.mahourigan.moonwidget.render.SkyDomeRenderer
 import androidx.compose.runtime.Composable
@@ -71,6 +72,22 @@ fun Palette.toDomePalette(): SkyDomeRenderer.Palette = SkyDomeRenderer.Palette(
     arc = moon.copy(alpha = 0.65f).toArgb(),
     horizon = muted.toArgb(),
     marker = moon.toArgb(),
+)
+
+/**
+ * Colours for the rings round the widget's Moon.
+ *
+ * The arc borrows the Moon's own colour the way the dome does, so the ring
+ * reads as the Moon's path rather than as furniture; the markers take the
+ * accent, which is what the compass dial already uses for a bearing.
+ */
+fun Palette.toOrbitPalette(): MoonOrbitRenderer.Palette = MoonOrbitRenderer.Palette(
+    track = moon.copy(alpha = 0.55f).toArgb(),
+    trackFaint = moon.copy(alpha = 0.26f).toArgb(),
+    horizon = muted.copy(alpha = 0.45f).toArgb(),
+    north = muted.toArgb(),
+    marker = accent.toArgb(),
+    ground = background.toArgb(),
 )
 
 /** Colours for the widget's compass dial, matching `ui/CompassRose.kt`. */
